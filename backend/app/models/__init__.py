@@ -5,6 +5,7 @@ from .branch import Branch
 from .technician import Technician
 from .diagnostic_report import DiagnosticReport
 from .service_call import ServiceCall
+from .user import User
 
 
-__all__="Service_Call_Status", "Service_Call_Priority", "ATMStatus", "Base", "ATM","Technician_RBAC", "Branch", "Technician", "ServiceCall", "DiagnosticReport"
+__all__="Service_Call_Status","User", "Service_Call_Priority", "ATMStatus", "Base", "ATM","Technician_RBAC", "Branch", "Technician", "ServiceCall", "DiagnosticReport"
