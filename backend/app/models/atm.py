@@ -8,8 +8,10 @@ from .base import Base
 from .enums import ATMStatus
 
 # todo add the if type_checking to connect the branch, technician and service calls to the atms
-#if TYPE_CHECKING:
-#   from .branch import Branch
+if TYPE_CHECKING:
+   from .branch import Branch
+   from .technician import Technician
+   from .service_call import ServiceCall
 
 class ATM(Base):
     __tablename__ = "atms"
@@ -30,7 +32,9 @@ class ATM(Base):
     technician_id: Mapped[int] = mapped_column(Integer, ForeignKey("technicians.id"))
 
     # TODO create the realtions between the branch, technician, and service call models
-    # branch: Mapped["Branch"] = relationship(back_populates="atms")
+    branch: Mapped["Branch"] = relationship(back_populates="atms")
+    technician: Mapped["Technician"] = relationship(back_populates="atms")
+    service_call: Mapped["ServiceCall"] = relationship(back_populates="atm")
 
     # representing as a string for logging and debugging
     def __repr__(self):

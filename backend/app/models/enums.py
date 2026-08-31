@@ -16,3 +16,8 @@ class Service_Call_Priority(str, Enum):
     LOW="Low"
     MEDIUM="Medium"
     CRITICAL="Critical"
+
+class Technician_RBAC(str, Enum):
+    OPERATION_MANAGER = "Operation-Manager"
+    FIELD_TECHNICIAN = "Field-Technician"
+    AUDITOR = "Auditor"    
